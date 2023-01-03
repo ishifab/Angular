@@ -1,0 +1,61 @@
+<h1>Bonjour</h1>
+<p>il y a {{etudiants}} élèves</p>
+<p>le directeur se nomme :{{dir.prenom}}</p>
+<p>L'utilisateur se nomme : {{user.name}}</p>
+<h1 (click)="afficheMessage('coucou')">Bonjour</h1>
+<div (click)="afficheMessage1('parent',$event)">
+    Message parent
+    <span (click)="afficheMessage1('enfant',$event)">Message enfant</span>
+
+</div>
+
+<ul *ngIf="5 > 1"> <!--Faire une condition if-->
+    <li> message</li>
+    <li> message</li>
+    <li> message</li>
+</ul>
+
+<ul>
+    <li *ngFor="let valeur of quantites;let indice = index">{{indice}} {{valeur.id}} {{valeur.name}} {{valeur.email}}
+    </li>
+</ul>
+
+<ul *ngFor="let user of quantites">
+    <li>{{user | json}}</li>
+    <li>{{user.id}}</li>
+    <li>{{user.name}}</li>
+    <li>{{user.email}}</li>
+</ul>
+
+<ul *ngFor="let user of data">
+    <!--user va pointer dans les elements qui sont dans data-->
+    <li>{{ user.id}} {{ user.name}} {{ user.address.streetName}} {{ user.address.streetId}}</li>
+    
+     <!--elt va pointer dans les elements qui sont dans user.projets-->
+    <li *ngFor="let elt of user.projets"> {{elt.libelle}} {{elt.description}} </li>
+   
+</ul>
+
+<ul>
+    <ng-container *ngFor="let user of quantites">
+        <li *ngIf="user.id! % 2 == 0; then si else sinon">
+            msg non affiche </li>
+        <ng-template #si>
+            <li>{{user.id}} est pair</li>
+        </ng-template>
+        <ng-template #sinon>
+            <li>{{user.id}} est impair</li>
+        </ng-template>
+    </ng-container>
+</ul>
+
+<div [ngClass]="{'red' : true }">
+    div avec des classes dynamiques
+
+</div>
+
+<ul *ngFor="let user of quantites">
+    <li [ngClass]="user.id! % 2 == 0? 'blue' : 'red'"> {{user.id}}</li>
+   
+</ul>
+
