@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { User } from '../interfaces/user';
+import { Router } from '@angular/router';
+import { User } from '../../interfaces/user';
 
 @Component({
   selector: 'app-home',
@@ -22,6 +23,7 @@ export class HomeComponent {
     event.preventDefault();
     event.stopPropagation();
   }
+  
   data: any[] = [{
     "id": 1,
     "name": "abc",
@@ -58,5 +60,11 @@ export class HomeComponent {
       }
   ]
   }]
+
+  // ici on fait l'injection de dependance du service router
+  constructor(private router : Router){}
+  goTo(): void{
+    this.router.navigate(['/form']);
+  }
 
 }

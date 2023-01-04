@@ -1,13 +1,52 @@
-<ul>
-  <li><a routerLink="">Home</a></li>
-  <li><a routerLink="form">Form</a></li>
-  <li><a routerLink="test">Test</a></li>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" routerLink="">Home</a>
+        <a class="nav-link" routerLink="form">Form</a>
+        <a class="nav-link" routerLink="test">Test</a>
+        <a class="nav-link" routerLink="users">Users</a>
+       
+      </div>
+    </div>
+  </div>
+</nav>
+
 <!--
   une autre manière d'écrire si on veut que voir le rechargement
   <li><a href="">Home</a></li>
   <li><a href="form">Form</a></li> 
   -->
 
-</ul>
 
-<router-outlet></router-outlet> <!--ça permet de faire le lien donc cest obligatoire-->
+<div class="container">
+
+<router-outlet></router-outlet> <!--ça permet de faire le lien donc c'est obligatoire-->
+</div>
+<div class="container my-5">
+  <!-- Footer -->
+  <footer class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" routerLink="">Home</a>
+            <a class="nav-link" routerLink="form">Form</a>
+            <a class="nav-link" routerLink="test">Test</a>
+            <a class="nav-link" routerLink="users">Users</a>
+           
+          </div>
+        </div>
+      </div>
+    </nav>
+  </footer>
+  <!-- Footer -->
+</div>
+
+

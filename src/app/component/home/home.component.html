@@ -3,6 +3,7 @@
 <p>le directeur se nomme :{{dir.prenom}}</p>
 <p>L'utilisateur se nomme : {{user.name}}</p>
 <h1 (click)="afficheMessage('coucou')">Bonjour</h1>
+<button (click)="goTo()">Go To</button>
 <div (click)="afficheMessage1('parent',$event)">
     Message parent
     <span (click)="afficheMessage1('enfant',$event)">Message enfant</span>
